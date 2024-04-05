@@ -1,14 +1,14 @@
-name: 'redis active'
+name: "redis active"
 
 on:
   push:
   schedule:
-  # 整点执行一次
-    - cron: '0 * * * *'
+    # 整点执行一次
+    - cron: "0 * * * *"
 
 jobs:
-  start: 
+  start:
     runs-on: ubuntu-latest
     steps:
-      - name: 'curl api'
-        run: curl https://lingu-nextjs-cron.vercel.app/api/cron/active-redis
+      - name: "curl api"
+        run: curl ${{ secrets.REDISACTIVE_URL }}

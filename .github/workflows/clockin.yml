@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'curl api'
-        run: curl https://lingu-nextjs-cron.vercel.app/api/cron/clockin
+        run: curl ${{ secrets.CLOCKIN_URL }}
