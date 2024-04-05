@@ -1,0 +1,14 @@
+name: 'Redis active'
+
+on:
+  push:
+  schedule:
+  # 每十分钟执行一次
+    - cron: '0,10,20,30,40,50 * * * *'
+
+jobs:
+  start: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'test'
+        run: bash curl https://lingu-nextjs-cron.vercel.app/api/cron/active-redis
