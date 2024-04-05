@@ -1,0 +1,14 @@
+name: 'clock out'
+
+on:
+  push:
+  schedule:
+  #每天下午5点40 UTC0加8个钟
+    - cron: '40 9 * * *'
+
+jobs:
+  start: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'curl api'
+        run: curl https://lingu-nextjs-cron.vercel.app/api/cron/clockout
