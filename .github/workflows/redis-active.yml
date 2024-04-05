@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'curl api'
-        run: bash curl 'https://lingu-nextjs-cron.vercel.app/api/cron/active-redis'
+        run: curl https://lingu-nextjs-cron.vercel.app/api/cron/active-redis
